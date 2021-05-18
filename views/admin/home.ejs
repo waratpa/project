@@ -1,0 +1,106 @@
+<!-- <%- include('../partials/header2.ejs') %>
+<link rel="stylesheet" href="home.css">
+<script src="check.js" defer></script>
+<% flights.forEach(function(flight){  %>
+    <div class="flightbox">
+        <div class="row">
+            <div class="col-2">
+                <div class="image"></div>
+            </div>
+            <div class="col-2">
+                <p class="flight1"><strong><%= flight.flightname %></strong></p>
+                <p>From: <%= flight.from %></p>
+            </div>
+            <div class="col-2">
+                <p class="flight">To: <%= flight.to %></p>
+            </div>
+            <div class="col-2">
+                <p class="flight">Date: <%= flight.date %></p>
+            </div>
+            <div class="col-2">
+                <p class="flight">Price: <%= flight.price %></p>
+            </div>
+            <div class="col-2">
+                <a href="/info/<%= flight._id %>">
+                    <button class="view">view</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <% }); %>
+<%- include('../partials/footer.ejs') %> -->
+
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="home.css">
+    <script src="check.js" defer></script>
+    <div class="container">
+        <div class="main">
+            <div class="searchbox">
+                <div class="row">
+                    <div class="col-3">
+                        <a id="search">From</a>
+                        <input type="text" class="input1">
+                    </div>
+                    <div class="col-3">
+                        <a id="search">To</a>
+                        <input type="text" class="input1">
+                    </div>
+                    <div class="col-3">
+                        <a id="search">Seat Class</a>
+                        <input type="text" class="input1">
+                    </div>
+                    <div class="col-3">
+                        <a id="search">Stop</a>
+                        <input type="text" class="input1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <a id="search">Departure Date</a>
+                        <input type="date" class="input1">
+                    </div>
+                    <div class="col-3">
+                        <input type="checkbox" class="check" id="check" onclick="show()">
+                        <a>ReturnDate</a>
+                        <input type="date" class="input1" id="date" style="display: none;">
+                    </div>
+                    <div class="col-3">
+                        <a id="search">No. of Passengers</a>
+                        <input type="text" class="input1">
+                    </div>
+                    <div class="col-3">
+                        <input type="submit" class="submit" value="Search Flights">
+                    </div>
+                </div>
+            </div>
+
+            <% flights.forEach(function(flight){  %>
+            <div class="flightbox">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="image"></div>
+                    </div>
+                    <div class="col-2">
+                        <p class="flight1"><strong><%= flight.flightname %></strong></p>
+                        <p>From: <%= flight.from %></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="flight">To: <%= flight.to %></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="flight">Date: <%= flight.date %></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="flight">Price: <%= flight.price %></p>
+                    </div>
+                    <div class="col-2">
+                        <a href="/info/<%= flight._id %>">
+                            <button class="view">view</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+<%- include('../partials/footer.ejs') %>

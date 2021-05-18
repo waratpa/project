@@ -1,0 +1,44 @@
+.loginbox{
+    background-color: white;
+    width: 700px;
+    height: 340px;
+    margin-top: 5%;
+    border-radius: 50px;
+    font-size: 25px;
+    margin-left: 30%;
+}
+
+#loginbox{
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 100px;
+}
+
+#loginbutton{
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:  #0099FF;
+    color: white;
+    font-size: 30px;
+    margin-left: 85px;
+    margin-top: 10px;
+}
+
+#wordS{
+    color: #0099FF;
+    margin-left: 100px;
+}
+#Noa{
+    margin-left: 100px;
+}
+
+a{
+    margin-left: 100px;
+    padding-top: 5px;
+}
+#o{
+    background-color: #0099FF;
+    border-radius: 100px;
+}

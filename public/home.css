@@ -1,0 +1,68 @@
+.main{
+    background-color: white;
+    height: 1000px;
+    padding-top: 1%;
+    margin-top: 2%;
+    border-radius: 20px;
+}
+.searchbox{
+    border: black 2px solid;
+    height: 250px;
+    border-radius: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 25px;
+    padding-top: 22px;
+}
+.input1{
+    width: 260px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 10px;
+}
+#search{
+    margin-left: 20px;
+}
+.submit{
+    width: 260px;
+    height: 50px;
+    margin-left: 20px;
+    margin-top: 32px;
+    border-radius: 10px;
+    background-color:  #0099FF;
+    color: white;
+}
+.check{
+    margin-left: 20px;
+}
+.flightbox{
+    border: black 2px solid;
+    height: 150px;
+    border-radius: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 20px;
+    margin-top: 0.5%;
+}
+.flight{
+    margin-top: 40%;
+}
+.flight1{
+    margin-top: 15%;
+}
+.view{
+    width: 150px;
+    height: 40px;
+    margin-top: 30%;
+    border-radius: 10px;
+    background-color:  #0099FF;
+    color: white;
+}
+.image{
+    width: 120px;
+    height: 120px;
+    border-radius: 1000px; 
+    border: black 2.5px solid;
+    margin-left: 20%;
+    margin-top: 6%;
+}
