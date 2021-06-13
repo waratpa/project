@@ -1,0 +1,33 @@
+<%- include('../partials/header2.ejs') %>
+<link rel="stylesheet" href="/country.css">
+<script src="/add.js" defer></script>
+  
+  <div class="container">
+    
+    <div class="main">  
+      <div class="addcountrybox">
+        <form action="/addcountry" method="POST">
+          Add Country
+          <input type="text" name="Ncountry">
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <div class="countrylist">
+        <p>Country list</p>
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for town" title="Type in a name">
+        <ul id="myUL">
+          <% countrys.forEach(function(country){  %>
+            <form action="/deletecountry/<%= country._id %>?_method=DELETE" method="POST">
+              <li>
+                <a href="#"><%= country.countryname %><input type="submit" class="delete" value="delete"></a>
+              </li>
+            </form> 
+          <% }); %>    
+        </ul>
+      </div>
+      
+    </div>
+  </div>  
+<%- include('../partials/footer.ejs') %>
+

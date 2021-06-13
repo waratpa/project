@@ -1,0 +1,44 @@
+<%- include('partials/header.ejs') %>
+
+
+<link rel="stylesheet" href="/edit.css">
+    <div class="container">
+            <div class="acountbox">
+                <form action="/<%= currentUser._id %>?_method=PUT" method="POST">
+                <div class="row">
+                    <div class="col-6" id="text">
+                        <p id="Myac">My Acount</p>
+                        <div class="row">
+                            <div class="col-5" id="text">
+                                <p><a>First Name</a></p>
+                                <p>Last Name  </p>
+                                <p>Age </p>
+                                <p>Gender  </p>
+                                <p>Phone Number </a></p>
+                                <p>Email </p>
+                                <input type="submit" value="confirm" class="edit">
+                            </div>
+
+                            <div class="col-7">
+                            
+                                <p><input type="text" value="<%= currentUser.FirstName %>" name="useracount[FirstName]"></p>
+                                <p><input type="text" value="<%= currentUser.LastName %>" name="useracount[LastName]"></p>
+                                <p><input type="text" value="<%= currentUser.Age %>" name="useracount[Age]"></p>
+                                <p><input type="text" value="<%= currentUser.gender %>" name="useracount[gender]"></p>
+                                <p><input type="text" value="<%= currentUser.PhoneNumber %>" name="useracount[PhoneNumber]"></p>
+                                <p><input type="text" value="<%= currentUser.email %>" name="useracount[email]"></p>   
+                            
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-6" id="out">
+                            <br>
+                            <h3 class="ypoint">Your Point</h3>
+                            <h3 id="point"> <%= currentUser.point %> </h3>   
+                    </div>
+                    
+                </div>
+                </form>
+            </div>  
+    </div>
+<%- include('partials/footer.ejs') %>

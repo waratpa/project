@@ -1,106 +1,265 @@
-<!-- <%- include('../partials/header2.ejs') %>
-<link rel="stylesheet" href="home.css">
-<script src="check.js" defer></script>
-<% flights.forEach(function(flight){  %>
-    <div class="flightbox">
-        <div class="row">
-            <div class="col-2">
-                <div class="image"></div>
-            </div>
-            <div class="col-2">
-                <p class="flight1"><strong><%= flight.flightname %></strong></p>
-                <p>From: <%= flight.from %></p>
-            </div>
-            <div class="col-2">
-                <p class="flight">To: <%= flight.to %></p>
-            </div>
-            <div class="col-2">
-                <p class="flight">Date: <%= flight.date %></p>
-            </div>
-            <div class="col-2">
-                <p class="flight">Price: <%= flight.price %></p>
-            </div>
-            <div class="col-2">
-                <a href="/info/<%= flight._id %>">
-                    <button class="view">view</button>
-                </a>
-            </div>
-        </div>
-    </div>
-    <% }); %>
-<%- include('../partials/footer.ejs') %> -->
-
-<%- include('../partials/header.ejs') %>
-    <link rel="stylesheet" href="home.css">
-    <script src="check.js" defer></script>
+<%- include('../partials/header2.ejs') %>
+    <link rel="stylesheet" href="/Ahome.css">
+    <script src="Acheck.js" defer></script>
     <div class="container">
         <div class="main">
+            <button onclick="myFunction()" class="addbut"><strong>ADD Flight</strong></button>
+            <div class="addflightbox" id="add">
+                <form action="/addflight" method="POST">
+                    
+                    <div class="row">
+                        <div class="col-4">
+                            <strong class="addin1">Airline name</strong><br>
+                            <select name="airlinename" id="" class="addin1">
+                                <% airlines.forEach(function(airline){  %>
+                                    <option value="<%= airline.airlinename %>"><%= airline.airlinename %></option>
+                                <% }); %>
+                            </select><br>
+                        </div>
+                        <div class="col-4">
+                            <strong>Class</strong><br> 
+                                <select name="Fclass" id="" class="addin">
+                                    <option value="Economy">Economy</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Firstclass">Firstclass</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <strong>Max Seat</strong> 
+                            <br><input type="number" name="seat" class="addin2"> 
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+
+                                <strong class="addin3">From</strong>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong class="addin1">Town</strong>
+                                            <select name="FTname" id="" class="addin3">
+                                                <% towns.forEach(function(town){  %>
+                                                    <option value="<%= town.townname %>"><%= town.townname %></option>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                        <strong>Country</strong>
+                                            <select name="FCname" id="" class="addin">
+                                                <% countrys.forEach(function(country){  %>
+                                                    <option value="<%= country.countryname %>"><%= country.countryname %></option>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <strong>To</strong>
+                                        <div class="col-6">
+                                        <strong>Town</strong>
+                                            <select name="TTname" id="" class="addin">
+                                                <% towns.forEach(function(town){  %>
+                                                    <option value="<%= town.townname %>"><%= town.townname %></option>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                        <strong>Country</strong>
+                                            <select name="TCname" id="" class="addin4" >
+                                                <% countrys.forEach(function(country){  %>
+                                                    <option value="<%= country.countryname %>"><%= country.countryname %></option>
+                                                <% }); %>
+                                            </select>
+                                        </div>
+                            </div>    
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-4">
+                            <strong class="addin1">Date</strong><br><input type="date" name="Fdate" class="addin1"><br>
+                            <strong class="addin1">Stop</strong><br><input type="number" name="stop" class="addin1">
+                        </div>
+                        <div class="col-4">
+                            <strong>Departure</strong><br><input type="time" name="departure" class="addin">
+                            <strong>Price</strong><br><input type="number" name="price" class="addin">
+                        </div>
+                        <div class="col-4">
+                            <strong>Total time</strong><br><input type="number" name="time" class="addin2">
+                            <br><br><input type="submit" class="addinbut" value="ADD">
+                        </div>
+                    </div>
+                </form>   
+            </div>
+
             <div class="searchbox">
+                <form action="/adminhomeS" method="POST">
                 <div class="row">
                     <div class="col-3">
-                        <a id="search">From</a>
-                        <input type="text" class="input1">
+                        <a id="search">From</a><br>
+                            <select name="Sfrom" id="SForm" class="input1">
+                                <% ofrom.forEach(function(flight){  %>
+                                    <option value="<%= flight %>" ><%= flight %></option>
+                                <% }); %>
+                            </select>
                     </div>
                     <div class="col-3">
                         <a id="search">To</a>
-                        <input type="text" class="input1">
+                        <select name="Sto" id="" class="input1">
+                            <% oto.forEach(function(flight){  %>
+                                <option value="<%= flight %>"><%= flight %></option>
+                            <% }); %>
+                        </select>
                     </div>
                     <div class="col-3">
-                        <a id="search">Seat Class</a>
-                        <input type="text" class="input1">
+                        <a id="search">Class</a>
+                        <select name="Sclass" id="" class="input1">
+                            <% oclass.forEach(function(flight){  %>
+                                <option value="<%= flight %>"><%= flight %></option>
+                            <% }); %>
+                        </select>
                     </div>
                     <div class="col-3">
                         <a id="search">Stop</a>
-                        <input type="text" class="input1">
+                        <select name="Sstop" id="" class="input1">
+                            <% ostop.forEach(function(flight){  %>
+                                <option value="<%= flight %>"><%= flight %></option>
+                            <% }); %>
+                        </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3">
                         <a id="search">Departure Date</a>
-                        <input type="date" class="input1">
+                        <select name="Sdated" id="" class="input1">
+                            <% odate.forEach(function(flight){  %>
+                                <option value="<%= flight %>"><%= flight %></option>
+                            <% }); %>
+                        </select>
                     </div>
                     <div class="col-3">
                         <input type="checkbox" class="check" id="check" onclick="show()">
                         <a>ReturnDate</a>
-                        <input type="date" class="input1" id="date" style="display: none;">
+                        <select name="Sdateb" class="input1" id="date" style="display: none;">
+                            <% odate.forEach(function(flight){  %>
+                                <option value="<%= flight %>"><%= flight %></option>
+                            <% }); %>
+                        </select>
                     </div>
                     <div class="col-3">
                         <a id="search">No. of Passengers</a>
-                        <input type="text" class="input1">
+                        <input type="number" min="1" class="input1" name="Snum">
                     </div>
                     <div class="col-3">
                         <input type="submit" class="submit" value="Search Flights">
                     </div>
                 </div>
+                </form>
+            </div>
+            
+            <div class="sort">
+            sort by :   <input type="radio" id="male" name="sort" value="none" onclick="sortnone()">
+                        <label for="none">none</label> 
+                        <input type="radio" id="male" name="sort" value="time" onclick="sorttime()">
+                        <label for="time">time</label> 
+                        <input type="radio" id="male" name="sort" value="price" onclick="sortprice()">
+                        <label for="price">price</label>
+            </div>            
+
+            <div id="sortn">
+            <% flights.forEach(function(flight){  %>
+                <a href="/Ainfo/<%= flight._id %>" class="flighta" >
+                    <div class="flightbox">
+                       <div class="row">
+                        <div class="col-2">
+                            <img src="<%= flight.img %>" class="image">
+                        </div>
+                        <div class="col-2">
+                            <p class="flight1"><strong><%= flight.airlinename %></strong></p>
+                            <p>From: <%= flight.from %></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">To:<span id="To"><%= flight.to %></span></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">Date: <%= flight.date %></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">Departure: <%= flight.departure %></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">Price: <%= flight.price %></p>
+                        </div>
+                    </div> 
+                    </div>
+            </a>
+            <% }); %>
             </div>
 
-            <% flights.forEach(function(flight){  %>
-            <div class="flightbox">
-                <div class="row">
-                    <div class="col-2">
-                        <div class="image"></div>
+            <div id="sortt">
+            <% flightt.forEach(function(flight){  %>
+                <a href="/Ainfo/<%= flight._id %>" class="flighta" >
+                    <div class="flightbox">
+                       <div class="row">
+                        <div class="col-2">
+                            <img src="<%= flight.img %>" class="image">
+                        </div>
+                        <div class="col-2">
+                            <p class="flight1"><strong><%= flight.airlinename %></strong></p>
+                            <p>From: <%= flight.from %></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">To:<span id="To"><%= flight.to %></span></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">Date: <%= flight.date %></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">Departure: <%= flight.departure %></p>
+                        </div>
+                        <div class="col-2">
+                            <p class="flight">Price: <%= flight.price %></p>
+                        </div>
+                    </div> 
                     </div>
-                    <div class="col-2">
-                        <p class="flight1"><strong><%= flight.flightname %></strong></p>
-                        <p>From: <%= flight.from %></p>
-                    </div>
-                    <div class="col-2">
-                        <p class="flight">To: <%= flight.to %></p>
-                    </div>
-                    <div class="col-2">
-                        <p class="flight">Date: <%= flight.date %></p>
-                    </div>
-                    <div class="col-2">
-                        <p class="flight">Price: <%= flight.price %></p>
-                    </div>
-                    <div class="col-2">
-                        <a href="/info/<%= flight._id %>">
-                            <button class="view">view</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
+                </a>
             <% }); %>
+            </div>
+
+            <div id="sortp">
+            <% flightp.forEach(function(flight){  %>
+                    <a href="/Ainfo/<%= flight._id %>" class="flighta" >
+                            <div class="flightbox">
+                               <div class="row">
+                                <div class="col-2">
+                                    <img src="<%= flight.img %>" class="image">
+                                </div>
+                                <div class="col-2">
+                                    <p class="flight1"><strong><%= flight.airlinename %></strong></p>
+                                    <p>From: <%= flight.from %></p>
+                                </div>
+                                <div class="col-2">
+                                    <p class="flight">To:<span id="To"><%= flight.to %></span></p>
+                                </div>
+                                <div class="col-2">
+                                    <p class="flight">Date: <%= flight.date %></p>
+                                </div>
+                                <div class="col-2">
+                                    <p class="flight">Departure: <%= flight.departure %></p>
+                                </div>
+                                <div class="col-2">
+                                    <p class="flight">Price: <%= flight.price %></p>
+                                </div>
+                            </div> 
+                            </div>
+                    </a>
+                <% }); %>
+            </div>
+
         </div>
     </div>
 <%- include('../partials/footer.ejs') %>

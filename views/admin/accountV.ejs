@@ -1,0 +1,36 @@
+<%- include('../partials/header2.ejs') %>
+
+<link rel="stylesheet" href="/acount.css">
+    <div class="container">
+            <div class="acountbox">
+                <div class="row">
+                    <div class="col-6" id="text">
+                        <p id="Myac">My Account</p>
+                        <div class="row">
+                            <div class="col-5" id="text">
+                                <p><a>First Name</a></p>
+                                <p>Last Name  </p>
+                                <p>Age </p>
+                                <p>Gender  </p>
+                                <p>Phone Number </a></p>
+                                <p>Email </p>
+                            </div>  
+                            <div class="col-7   ">
+                                <p><a id="Fname"><%= user.FirstName %></a></p>
+                                <p><a id="Lname"><%= user.LastName %></a></p>
+                                <p><a id="age"><%= user.Age %></a></p>
+                                <p><a id="gender"><%= user.gender %></a></p>      
+                                <p><a id="phone"></a><%= user.PhoneNumber %></p>
+                                <p><a id="email"></a><%= user.email %></p>                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6" id="out">
+                            <br>
+                            <h3 class="ypoint">Your Point</h3>
+                            <h3 id="point"> <%= user.point %> </h3>   
+                    </div>
+                </div>
+            </div>  
+    </div>
+<%- include('../partials/footer.ejs') %>

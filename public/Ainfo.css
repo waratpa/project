@@ -1,0 +1,102 @@
+.infobox{
+    border: black 2px solid;
+    border-radius: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: x-large;
+}
+.box{
+    background-color: white;
+    margin-top: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 20px;
+}
+.img{
+    border-radius: 1000px;  
+    border: black solid 2px;
+    width: 50%;
+    height: inherit;
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-right: 25%;  
+}
+#img{
+    padding-right: 0;
+    border-right:black solid 2px;
+}
+#airname{
+    text-align: center;
+    font-size: xx-large;
+    margin-top: 1%;
+    margin-bottom: 0;
+}
+.boxr{
+    padding-top: 1%;
+}
+.boxr2{
+    border-bottom: black solid 2px;
+}
+
+.boxr9{
+    padding-left: 0;
+}
+.boxr4{
+    padding-left: 0;
+    padding-top: 0%;
+}
+.boxr5{
+    padding-top: 0%;
+    border-right: black solid 2px;
+}
+
+.box1{
+    padding-left: 5%;
+}
+.box2{
+    padding-left: 5%;
+}
+.box3{
+    padding-left: 2.5%;
+}
+.boxr3{
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-right: black solid 2px;
+}
+.boxr6{
+    padding-right: 0;
+    border-right: black solid 2px;
+}
+.pm{
+    margin-left: 1%;
+}
+.infotop{
+    padding-bottom: 1%;
+    border-bottom: black solid 2px;
+}
+input{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    border: 0;
+    border-radius: 10px;
+}
+#delete{
+    background-color: red;
+    color: white;
+}
+#edit{
+    background-color: darkblue;
+    color: white;
+}
+.booking{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border: 0;
+    border-radius: 10px;
+}

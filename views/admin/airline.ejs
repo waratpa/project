@@ -1,0 +1,32 @@
+<%- include('../partials/header2.ejs') %>
+    <link rel="stylesheet" href="/airline.css">
+    <div class="container">
+        <div class="main">
+            <form action="/addairline" method="POST" enctype="multipart/form-data">
+                <div class="addairlinebox">
+                    Airline Name:
+                    <input type="text" name="Nairline"><br>
+                    image:
+                    <input type="file" name="Image" accept="image/*"><br>
+                    <button>ADD</button>
+                </div>
+            </form> 
+                <div class="airlinelist">
+                    <p>Airline list</p>
+                    <input type="text">
+                    <button type="submit">Search</button>
+                    <% airlines.forEach(function(airline){  %>
+                        <div class="list">
+                            <form action="/deleteairline/<%= airline._id %>?_method=DELETE" method="POST">
+                                <img src="<%= airline.image %>" class="imageair">
+                                Airline name :
+                                <%= airline.airlinename %>
+                               <input type="submit" class="delete" value="delete">
+                            </form>   
+                        </div>
+                    <% }); %>
+                </div>
+            
+        </div>
+    </div>
+<%- include('../partials/footer.ejs') %>

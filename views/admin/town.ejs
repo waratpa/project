@@ -1,0 +1,31 @@
+<%- include('../partials/header2.ejs') %>
+<link rel="stylesheet" href="/town.css">
+<script src="/add.js" defer></script>
+  
+  <div class="container">
+    <div class="main">    
+      <div class="addtownbox">
+        <form action="/addtown" method="POST">
+          <strong>Add Town</strong>
+          <input type="text" name="Ntown">
+          <button type="submit" class="addbut">Add</button>
+        </form>
+      </div>
+
+      <div class="townlist">
+        <strong>Town list</strong><br>
+        <div class="ons">
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for town">
+        </div>
+        <ul id="myUL">
+          <% towns.forEach(function(town){  %>
+            <form action="/deletetown/<%= town._id %>?_method=DELETE" method="POST">
+              <li>
+                <a href="#"><%= town.townname %><input type="submit" class="delete" value="delete"></a>
+              </li>
+            </form> 
+          <% }); %>    
+        </ul>
+      </div> 
+<%- include('../partials/footer.ejs') %>
+

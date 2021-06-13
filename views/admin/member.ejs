@@ -1,0 +1,48 @@
+<%- include('../partials/header2.ejs') %>
+<link rel="stylesheet" href="/member.css">
+<script src="member.js" defer></script>
+
+  
+  <div class="container">
+    <div class="main">
+      <button onclick="myFunctionM()" class="addbut">Admin</button>
+      
+      <div class="addflightbox" id="admin">
+        <button onclick="myFunctionM2()" class="addbut2">Add Admin</button>
+        <form action="/registerA" method="POST">
+          <div class="addadmin" id="add">
+            Add Admin<br>
+            User Name
+            <input type="text" name="username"><br>
+            Password
+            <input type="password" name="password">
+            <input type="submit" value="register">
+          </div>
+          
+          </form>
+          Admin list
+          <% admin.forEach(function(user){  %>
+            <div class="list">
+              <%= user.username %>
+            </div>
+          <% }); %>
+      </div> 
+      
+      <div class="countrylist">
+        <p>Member list</p>
+        <input type="text" id="myInput" onkeyup="search()" placeholder="Search for town" title="Type in a name">
+        <ul id="myUL">
+          <% users.forEach(function(user){  %>
+              <li>
+                  <a href="accountV/<%= user._id %>">
+                    <%= user.email %>
+                  </a>
+              </li>
+          <% }); %>    
+        </ul>
+      </div>
+      
+    </div>
+  </div>  
+<%- include('../partials/footer.ejs') %>
+

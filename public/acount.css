@@ -3,7 +3,7 @@ body{
 }
 .acountbox{
     background-color: white;
-    height: 600px;
+    height: 10  00px;
     font-size: 30px;
     color: #0099FF;
     border-radius: 10px;
@@ -31,6 +31,7 @@ p{
     height: 50px;
     margin-left: 40px;
     border-radius: 10px;
+    border: 0;
 }
 #out{
     background-color: white;

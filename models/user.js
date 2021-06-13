@@ -10,7 +10,8 @@ var UserSchema = new mongoose.Schema({
     PhoneNumber:    String,
     gender:         String,
     Age:            String,
-    point:          Number
+    point:          Number,
+    userclass:      String
 });
 
 UserSchema.plugin(passportLocalMongoose);
