@@ -681,24 +681,61 @@ app.delete('/deleteairline/:id', isLoggedIn2, function(req, res){
 })
 
 app.get('/:id/editA', isLoggedIn2,function(req,res){
-    Flight.findById(req.params.id , function(err, foundflight){
+
+    Airline.find({}, function(err, allairline){
         if(err){
             console.log(err);
         } else {
-            res.render("admin/editA.ejs", {flight: foundflight});
+            Country.find({}, function(err, allcountry){
+                if(err){
+                    console.log(err);
+                } else {
+                    Town.find({}, function(err, alltown){
+                        if(err){
+                            console.log(err);
+                        } else {
+                            Flight.findById(req.params.id , function(err, foundflight){
+                                if(err){
+                                    console.log(err);
+                                } else {
+                                    res.render("admin/editA.ejs", {towns: alltown, countrys: allcountry,airlines: allairline,flight: foundflight});
+                                }
+                            });
+                        }
+                    });
+                }
+            });
         }
     });
 });
 
-app.put('/:id/conedit' , isLoggedIn2, function(req,res){
-    User.findByIdAndUpdate(req.params.id, req.body.infoflight, function(err, updateflight){
+app.put('/:id/conedit', isLoggedIn2, function(req,res){
+    var from = req.body.FTname + " " + req.body.FCname;
+    var to = req.body.TTname + " " + req.body.TCname;
+    var airlines = req.body.airlinename;
+    console.log(airlines);
+    Airline.find({airlinename:airlines}, function(err, airline){
+        var img = airline.image;
         if(err){
-            res.redirect('/adminhome');
             console.log(err);
         } else {
-            res.redirect('/adminhome');
+            console.log("img = "+img);
+            Flight.findByIdAndUpdate(req.params.id, req.body.infoflight, function(err, updateflight){
+                if(err){
+                    console.log(err);
+                } else {
+                    Flight.findByIdAndUpdate(req.params.id, {from: from,to:to,airlinename:airlines}, function(err, updateflight){
+                        if(err){
+                            console.log(err);
+                        } else {
+                            console.log("data update");
+                            res.redirect('/adminhome');
+                        }
+                    });
+                }
+            });
         }
-    });
+    });      
 });
 
 app.delete('/deleteflight/:id', isLoggedIn2, function(req, res){

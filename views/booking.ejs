@@ -3,10 +3,11 @@
     <div class="container">
         <div class="main">
             <h1>MY booking</h1>
-            <div class="box">  
+            
             <% book.forEach(function(book){  %>
                 <% flight.forEach(function(flight){  %>
                     <% if( flight._id == book.flightid ){%>
+                        <div class="box">  
                         <a href="<%= book._id %>/bookinfo" class="bookbox">
                             <div class="info1"><strong>Booking id: <%= book._id %></strong></div>    
                             <div class="row">
@@ -15,19 +16,19 @@
                                 </div>
                                 <div class="col-9 pd2">
                                     <div class="row">
-                                        <div class="col-4 info2">
+                                        <div class="col-sm-4 col12 info2">
 
                                               <strong><%= flight.airlinename %></strong><br>
                                                 <strong>From: <%= flight.from %></strong>  
 
                                         </div>
-                                        <div class="col-4 info2">
+                                        <div class="col-sm-4 col12 info2">
 
                                                 <br>
                                                 <strong>To: <%= flight.to %></strong>
 
                                         </div>
-                                        <div class="col-4 info2">
+                                        <div class="col-sm-4 col12 info2">
 
                                                 <br>
                                                 <strong>Date: <%= flight.date %></strong>
@@ -37,10 +38,12 @@
                                 </div>
                             </div>
                         </a>
+                        </div>
                     <% }; %>
                 <% }); %>
             <% }); %>
-            </div>
+
+            
 
         </div>
     </div>

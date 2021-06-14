@@ -1,6 +1,5 @@
 .infobox{
     border: black 2px solid;
-    border-radius: 20px;
     margin-left: 1%;
     margin-right: 1%;
     font-size: x-large;
@@ -10,7 +9,6 @@
     margin-top: 1%;
     padding-top: 1%;
     padding-bottom: 1%;
-    border-radius: 20px;
 }
 .img{
     border-radius: 1000px;  
@@ -90,7 +88,6 @@
     margin-top: 1%;
     margin-bottom: 1%;
     border: 0;
-    border-radius: 10px;
 }
 
 .infobox2{
@@ -143,4 +140,65 @@
 
 .t11{
     margin-left: 40%;
+}
+
+@media screen  and (max-width: 425px) {
+    .hi{
+        display: block;
+    }
+    .hi2{
+        display: none;
+    }
+    .infobox2{
+        margin-top: 2%;
+        margin-left: 1%;
+        border: black 2px solid;
+        margin-right: 1%;
+        font-size: x-large;
+    }
+    .infobox{
+        border: black 2px solid;
+        font-size: x-large;
+    }
+    .boxr5{
+        border-bottom: black solid 2px;
+    }
+    .infotop{
+        padding-bottom: 1%;
+        border-bottom: black solid 2px;
+        border-top: black solid 2px;
+    }
+    .box1{
+        border-bottom: black solid 2px;
+    }
+    .pm2{
+        padding-left: 5%;
+        border-bottom: black solid 2px;
+    }
+    .pm3{
+        padding-left: 5%;
+    }
+
+    .boxr2{
+        border-bottom: 0;
+    }
+    .bookr4{
+        margin-left: 25%;
+    }
+    .bookrx{
+        margin-left: 5%;
+    }
+    .confirm{
+        margin-top: 2%;
+        border: 0;
+        background-color: red;
+        width: 100%;
+        color: white;
+        margin-left: 0%;
+        font-size: large ;
+        border-radius: 0;
+    }
+    .bookr3{
+        margin-left: 85%;
+    }
 }

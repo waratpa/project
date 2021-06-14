@@ -1,54 +1,81 @@
-body{
-    background-color:#0099FF;
-}
+
 .acountbox{
     background-color: white;
-    height: 600px;
-    font-size: 30px;
-    color: #0099FF;
-    border-radius: 10px;
-    margin-top: 2%;
-    padding-bottom: 2%;
+    font-size:  x-large;
+    border: black solid 2px;
+    margin-top: 5%;
 }
-p{
-    margin-left: 40px;
-}
-#Myac{
-    font-size: 50px;
-    color: #0099FF;
-    padding-top: 20px;
-}
-input{
-    height: 40px;
-    border-radius: 10px;
-}
+
 .edit{
-    background-color: #0099FF;
+    background-color: darkblue;
     color: white;
     text-align: center;
-    width: 150px;
+    width: 100%;
     height: 50px;
-    margin-left: 40px;
-    border-radius: 10px;
+    border: 0;
 }
-#out{
-    background-color: white;
-    width: 500px;
-    height: 500px;
-    border-radius: 1000px;
-    border: #0099FF 30px solid;
-    margin-left: 2.5%;
-    margin-top: 40px; 
-}
-.ypoint{
-    font-size: 50px;
-    margin-left: 20%;
-    padding-top: 100px;
-    padding-bottom: 0px;
 
+.headL{
+    background-color: darkblue;
+    color: white;
+    font-size: xx-large;
+    padding-top : 0.25%;
+    padding-right: 1%;
+    padding-left: 1%;
+    border-bottom: black solid 2px;
 }
-#point{
-    font-size: 100px;
-    margin-left: 45%;
-    padding-bottom: 0px;
+.point{
+    margin-top: 3%;
+    text-align: center;
+    font-size: xx-large;
+}
+.point2{
+    margin-left: 5%;
+    margin-right: 5%;
+    color: red;
+}
+.nl{
+    padding-right: 0;
+    border-right: black solid 2px;
+}
+
+.ml{
+    border-right: black solid 2px;
+}
+
+.ln{
+    border-bottom: black solid 2px;
+}
+.pl{
+    padding-left: 0;
+}
+
+.pr{
+    padding-right: 0;
+}
+.c{
+    text-align: center;
+}
+.world{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    padding-left: 2.5%;
+}
+
+.inm{
+    width: 60%;
+    height: 30px;
+}
+.inm2{
+    width: 59%;
+    height: 30px;
+}
+
+@media screen  and (max-width: 425px) {
+    .hi{
+        display: block;
+    }
+    .hi2{
+        display: none;
+    }
 }

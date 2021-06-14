@@ -8,33 +8,33 @@
                 <div class="headL">search</div>
                 <form action="/homeS" method="POST">
                 <div class="row">
-                    <div class="col-3">
-                        <a id="search">From</a><br>
-                            <select name="Sfrom" id="SForm" class="input1">
+                    <div class="col-sm-3 col-12">
+                        <a id="search">From</a>
+                            <select name="Sfrom" id="from" class="input1">
                                 <% ofrom.forEach(function(flight){  %>
                                     <option value="<%= flight %>" ><%= flight %></option>
                                 <% }); %>
                             </select>
                     </div>
-                    <div class="col-3">
+                    <div class="col-sm-3 col-12">
                         <a id="search">To</a>
-                        <select name="Sto" id="" class="input1">
+                        <select name="Sto" id="to" class="input1">
                             <% oto.forEach(function(flight){  %>
                                 <option value="<%= flight %>"><%= flight %></option>
                             <% }); %>
                         </select>
                     </div>
-                    <div class="col-3">
+                    <div class="col-sm-3 col-12">
                         <a id="search">Class</a>
-                        <select name="Sclass" id="" class="input1">
+                        <select name="Sclass" id="" class="input1 cs">
                             <% oclass.forEach(function(flight){  %>
                                 <option value="<%= flight %>"><%= flight %></option>
                             <% }); %>
                         </select>
                     </div>
-                    <div class="col-3">
+                    <div class="col-sm-3 col-12">
                         <a id="search">Stop</a>
-                        <select name="Sstop" id="" class="input1">
+                        <select name="Sstop" id="" class="input1 cs">
                             <% ostop.forEach(function(flight){  %>
                                 <option value="<%= flight %>"><%= flight %></option>
                             <% }); %>
@@ -42,26 +42,28 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-sm-3 col-12">
                         <a id="search">Departure Date</a>
-                        <select name="Sdated" id="" class="input1">
+                        <select name="Sdated" id="" class="input1 dep">
                             <% odate.forEach(function(flight){  %>
                                 <option value="<%= flight %>"><%= flight %></option>
                             <% }); %>
                         </select>
                     </div>
-                    <div class="col-3">
-                        <input type="checkbox" class="check" id="check" onclick="show()">
-                        <a>ReturnDate</a>
-                        <select name="Sdateb" class="input1" id="date" style="display: none;">
+                    <div class="col-sm-3 col-12">
+                        <input type="checkbox" class="check" id="check" onclick="show()" name="re">
+                        <label for="re">ReturnDate</label>
+                        <select name="Sdateb" class="input1 dep" id="date" style="display: none;">
                             <% flights.forEach(function(flight){  %>
                                 <option value="<%= flight.date %>"><%= flight.date %></option>
                             <% }); %>
                         </select>
                     </div>
+
                     <div class="col-3">
                     </div>
-                    <div class="col-3">
+
+                    <div class="col-sm-3 col-12">
                         <input type="submit" class="submit" value="Search Flights">
                     </div>
                 </div>
@@ -83,25 +85,34 @@
                     <a href="/info/<%= flight._id %>" class="flighta" >
                         <div class="flightbox">
                            <div class="row">
-                            <div class="col-2">
+
+
+                            <div class="col-2 hi">
                                 <img src="<%= flight.img %>" class="image">
                             </div>
-                            <div class="col-2">
+
+
+                            <div class="col-sm-2 col-12">
                                 <p class="flight1"><strong><%= flight.airlinename %></strong></p>
-                                <p>From: <%= flight.from %></p>
+                                <p class="flight1-2">From : <%= flight.from %></p>
                             </div>
-                            <div class="col-2">
-                                <p class="flight">To:<span id="To"><%= flight.to %></span></p>
+
+                            <div class="col-sm-2 col-12">
+                                <p class="flight">To : <span id="To"><%= flight.to %></span></p>
                             </div>
-                            <div class="col-2">
-                                <p class="flight">Date: <%= flight.date %></p>
+
+                            <div class="col-sm-2 col-12 hi">
+                                <p class="flight">Date : <%= flight.date %></p>
                             </div>
-                            <div class="col-2">
+
+                            <div class="col-sm-2 col-12 hi">
                                 <p class="flight">Departure: <%= flight.departure %></p>
                             </div>
-                            <div class="col-2">
-                                <p class="flight">Price: <%= flight.price %></p>
+
+                            <div class="col-sm-2 col-12">
+                                <p class="flight">Price : <%= flight.price %></p>
                             </div>
+                            
                         </div> 
                         </div>
                 </a>
@@ -113,58 +124,76 @@
                     <a href="/info/<%= flight._id %>" class="flighta" >
                         <div class="flightbox">
                            <div class="row">
-                            <div class="col-2">
+
+
+                            <div class="col-2 hi">
                                 <img src="<%= flight.img %>" class="image">
                             </div>
-                            <div class="col-2">
+
+
+                            <div class="col-sm-2 col-12">
                                 <p class="flight1"><strong><%= flight.airlinename %></strong></p>
-                                <p>From: <%= flight.from %></p>
+                                <p class="flight1-2">From : <%= flight.from %></p>
                             </div>
-                            <div class="col-2">
-                                <p class="flight">To:<span id="To"><%= flight.to %></span></p>
+
+                            <div class="col-sm-2 col-12">
+                                <p class="flight">To : <span id="To"><%= flight.to %></span></p>
                             </div>
-                            <div class="col-2">
-                                <p class="flight">Date: <%= flight.date %></p>
+
+                            <div class="col-sm-2 col-12 hi">
+                                <p class="flight">Date : <%= flight.date %></p>
                             </div>
-                            <div class="col-2">
+
+                            <div class="col-sm-2 col-12 hi">
                                 <p class="flight">Departure: <%= flight.departure %></p>
                             </div>
-                            <div class="col-2">
-                                <p class="flight">Price: <%= flight.price %></p>
+
+                            <div class="col-sm-2 col-12">
+                                <p class="flight">Price : <%= flight.price %></p>
                             </div>
+                            
                         </div> 
                         </div>
-                    </a>
+                </a>
                 <% }); %>
                 </div>
     
                 <div id="sortp">
                 <% flightp.forEach(function(flight){  %>
-                        <a href="/info/<%= flight._id %>" class="flighta" >
-                                <div class="flightbox">
-                                   <div class="row">
-                                    <div class="col-2">
-                                        <img src="<%= flight.img %>" class="image">
-                                    </div>
-                                    <div class="col-2">
-                                        <p class="flight1"><strong><%= flight.airlinename %></strong></p>
-                                        <p>From: <%= flight.from %></p>
-                                    </div>
-                                    <div class="col-2">
-                                        <p class="flight">To:<span id="To"><%= flight.to %></span></p>
-                                    </div>
-                                    <div class="col-2">
-                                        <p class="flight">Date: <%= flight.date %></p>
-                                    </div>
-                                    <div class="col-2">
-                                        <p class="flight">Departure: <%= flight.departure %></p>
-                                    </div>
-                                    <div class="col-2">
-                                        <p class="flight">Price: <%= flight.price %></p>
-                                    </div>
-                                </div> 
-                                </div>
-                        </a>
+                    <a href="/info/<%= flight._id %>" class="flighta" >
+                        <div class="flightbox">
+                           <div class="row">
+
+
+                            <div class="col-2 hi">
+                                <img src="<%= flight.img %>" class="image">
+                            </div>
+
+
+                            <div class="col-sm-2 col-12">
+                                <p class="flight1"><strong><%= flight.airlinename %></strong></p>
+                                <p class="flight1-2">From : <%= flight.from %></p>
+                            </div>
+
+                            <div class="col-sm-2 col-12">
+                                <p class="flight">To : <span id="To"><%= flight.to %></span></p>
+                            </div>
+
+                            <div class="col-sm-2 col-12 hi">
+                                <p class="flight">Date : <%= flight.date %></p>
+                            </div>
+
+                            <div class="col-sm-2 col-12 hi">
+                                <p class="flight">Departure: <%= flight.departure %></p>
+                            </div>
+
+                            <div class="col-sm-2 col-12">
+                                <p class="flight">Price : <%= flight.price %></p>
+                            </div>
+                            
+                        </div> 
+                        </div>
+                </a>
                     <% }); %>
                 </div>
 

@@ -166,4 +166,103 @@
     padding-top : 0.25%;
     padding-right: 1%;
     padding-left: 1%;
-  }
+}
+
+
+@media screen  and (max-width: 425px) {
+    .hx{
+        display: none;
+    }
+    .input1{
+        width: 60%;
+        height: 30px;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        border-radius: 10px;
+    }
+    .dep{
+        width: 30%;
+    }
+    .cs{
+        margin-left: 12.5%;
+    }
+    #to{
+        margin-left: 20%;
+    }
+    #from{
+        margin-left: 12.5%;
+    }
+    .hi{
+        display: none;
+        margin: 0;
+    }
+    .hi2{
+        margin-top: 0;
+    }
+    .flight{
+        margin-top: 0;
+        margin-left: 10%;
+    }
+    .flight1{
+        margin-top: 0;
+        margin-left: 10%;
+    }
+    .flight1-2{
+        margin-top: 0;
+        margin-left: 10%;
+    }
+    .submit{
+        width: 95%;
+        height: 50px;
+        margin-top: 0;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+        border-radius: 10px;
+        background-color:  darkblue;
+        color: white;
+        border: 0;
+    }
+    .addin{
+        width: 92%;
+        height: 30px;
+        border-radius: 10px;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .addin1{
+        width: 92%;
+        height: 30px;
+        border-radius: 10px;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .addin2{
+        width: 92%;
+        height: 30px;
+        border-radius: 10px;
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .addin3{
+        
+        width: 95%;
+        height: 30px;
+        border-radius: 10px;
+        margin-left: 5%;
+    }
+    .addin4{
+        
+        width: 95%;
+        height: 30px;
+        border-radius: 10px;
+        margin-right: 5%;
+    }
+    .addinbut{
+        width: 96%;
+        border: 0;
+        background-color: darkblue;
+        color: white;
+        border-radius: 10px;
+        margin-right: 4%;
+    }
+}

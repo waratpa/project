@@ -5,51 +5,50 @@
     <div class="box">
         
         <div class="infobox">
-                <div class="row">    
-                    <div class="col-3" id="img">
-                        <img src="<%= flight.img %>" class="img">
-                        <p id="airname"> <strong><%= flight.airlinename %></strong></p>
-                    </div>
-                        
-                        <div class="col-9 boxr9">
-                            <div class="boxr">
-                                <div class="boxr2">
-                                    <div class="infotop">
-                                        <strong class="box3">Class : <%= flight.classF %></strong>
-                                    </div>
-
-                                    <div class="row" >    
-                                        <div class="col-6 boxr5">
-                                            <strong class="box2">From : <%= flight.from %></strong>
-                                        </div>
-                                        <div class="col-6 boxr19" >
-                                            <strong class="box2">To : <%= flight.to %></strong>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
+            <div class="row">    
+                <div class="col-sm-3 col-12" id="img">
+                    <img src="<%= flight.img %>" class="img hi2">
+                    <p id="airname"> <strong><%= flight.airlinename %></strong></p>
+                </div>
+                    
+                    <div class="col-sm-9  col-12 boxr9">
+                        <div class="boxr">
                             <div class="boxr2">
-                                <div class="row">    
-                                    <div class="col-4 boxr6">
-                                        <strong class="box1">Date : <%= flight.date %></strong><br>
-                                        <strong class="box1">Travel Time : <%= flight.time %> H</strong>                              
+                                <div class="infotop">
+                                    <strong class="box3">Class : <%= flight.classF %></strong>
+                                </div>
+
+                                <div class="row" >    
+                                    <div class="col-sm-6  col-12 boxr5">
+                                        <strong class="box2">From : <%= flight.from %></strong>
                                     </div>
-                                    <div class="col-4 boxr6">
-                                        <strong class="pm">Departure : <%= flight.departure %></strong><br>
-                                        <strong class="pm">Seat : <%= flight.seat %></strong>
-                                    </div>
-                                    <div class="col-4 ">
-                                        <strong class="pm">Stop : <%= flight.stop %></strong><br>
-                                        <strong class="pm">Price : <%= flight.price %></strong>
+                                    <div class="col-sm-6 col-12" >
+                                        <strong class="box2">To : <%= flight.to %></strong>
                                     </div>
                                 </div>
+                            </div> 
+                        </div> 
+                        <div class="boxr2">
+                            <div class="row">    
+                                <div class="col-sm-4 col-12 boxr6">
+                                    <div class="box1"><strong>Date : <%= flight.date %></strong><br></div>
+                                    <div class="box1"><strong >Travel Time : <%= flight.time %> H</strong></div>                             
+                                </div>
+                                <div class="col-sm-4 col-12 boxr6">
+                                    <div class="pm2"><strong class="pm">Departure : <%= flight.departure %></strong><br></div>
+                                    <div class="pm2"><strong class="pm">Seat : <%= flight.seat %></strong></div>     
+                                </div>
+                                <div class="col-sm-4 col-12 ">
+                                    <div class="pm2"><strong class="pm">Stop : <%= flight.stop %></strong><br></div>
+                                    <div class="pm3"><strong class="pm">Price : <%= flight.price %></strong></div>
+                                </div>
                             </div>
-        
-                            <input type="button" value="booking" class="booking" id="book" onclick="show()">
-
-                </div>
+                        </div>
+                    <input type="button" value="booking" class="booking" id="book" onclick="show()">
             </div>
         </div>
+    </div>
+        
 
         <div class="infobox2" id="bookbox">
             <form action="/<%= flight._id %>/booking" method="POST">
@@ -58,22 +57,24 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-8 boxr5">
+                    <div class="col-sm-8 col-12 boxr5">
                         <span class="bookr"><strong><%= flight.airlinename %></strong></span><br>
                         <span class="bookr"><strong>Number of ticket</strong><input type="number" id="seatnum" onchange="totalprice()" value="1" class="nums" name="num"></span>
-                        <span class="bookr"><strong>Receive point</strong><span id="point" class="bookr4"><%= flight.price /10 %></span> Point</span> 
+                        <span class="bookr"><br><strong>Receive point</strong><span id="point" class="bookr4"><%= flight.price /10 %></span> Point</span> 
                         <input type="number" name="rpoint" style="display: none;" value="<%= flight.price /10 %>">
                         </div>
 
-                    <div class="col-4 box10">
+                    <div class="col-sm-4 col-12 box10">
 
                     <div class="boxr2">
-                        <span class="bookr">Price :<span class="bookr2"><span id="price"><%= flight.price %></span><br></span></span>
+                        <div class="t4">
+                            <span class="bookr">Price :<span class="bookr2"><span id="price"><%= flight.price %></span><br></span></span>
+                        </div>
                         <span class="bookr3"><span id="seatnum2" >1</span></span>
                     </div>
 
                     <div class="boxr2">
-                    <span class="bookr"><strong>Total</strong> <span class="bookr2" id="total"><%= flight.price %></span></span>
+                        <div class="t3"><span class="bookr"><strong>Total</strong> <span class="bookr2" id="total"><%= flight.price %></span></span></div>
                     </div>
 
                     <input type="submit" class="confirm" value="confirm booking">

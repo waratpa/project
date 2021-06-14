@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link rel="stylesheet" href="login.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-</head>
-<body style="background-color: #0099FF;">
-                <div class="loginbox">
-                    <br>
-                    <form action="adminlog" method="POST">
-                        <a id="email">Username</a>
-                        <input type="text" id="loginbox" name="email">
-                        <a>Password</a>       
-                        <input type="password" id="loginbox" name="password">
-                            <input type="submit" value="login" id="loginbutton">
-                        </div>
-                    </form>     
-                </div>
-</body>
-</html>
+<%- include('../partials/header2.ejs') %>
+<link rel="stylesheet" href="login.css">
+
+    <div>
+        <div class="loginbox">
+            <div class="headL"><strong>Login</strong></div> 
+                <form action="adminlog" method="POST">
+                    <span class="hh">Username</span><br>
+                    <input type="text" id="loginbox" name="email">
+                    <span class="hh">Password</span><br>
+                    <input type="password" id="loginbox" name="password">
+                    <div class="row">
+                        <div class="col-6">
+                             <span class="dl">No account yet?</span><br>
+                                <a href="/register" class="dl">Register</a>
+                            </div>
+                        <div class="col-6">
+                             <input type="submit" value="login" id="loginbutton">
+                        </div>                               
+                    </div>
+                </form>   
+    </div>
+    </div>           
+<%- include('../partials/footer.ejs') %>

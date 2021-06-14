@@ -2,12 +2,13 @@
 .loginbox{
     background-color: white;
     margin-top: 10%;
-    font-size: 25px;
+    font-size: medium;
     margin-left: 25%;
     margin-right: 25%;
     border: black solid 2px;
     padding-bottom: 2.5%;
     border: darkblue solid 15px;
+    min-width:350px
 }
 
 #loginbox{
@@ -46,4 +47,20 @@
     margin-bottom: 2.5%;
     text-align: center;
     font-size: xx-large;
-  }
+}
+
+@media screen  and (max-width: 425px) {
+    .me{
+       display: none;
+    }
+
+    @media screen  and (max-width: 375px) {
+            .me{
+                display: none;
+            }  
+    }
+
+
+}
+
+    
