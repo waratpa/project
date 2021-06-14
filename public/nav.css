@@ -10,3 +10,7 @@
 .bgp{
     padding: 0;
 }
+
+body{
+    background-image: url("/image/world.jpg");
+}

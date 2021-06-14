@@ -1,44 +1,49 @@
+
 .loginbox{
     background-color: white;
-    width: 700px;
-    height: 340px;
-    margin-top: 5%;
-    border-radius: 50px;
+    margin-top: 10%;
     font-size: 25px;
-    margin-left: 30%;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: black solid 2px;
+    padding-bottom: 2.5%;
+    border: darkblue solid 15px;
 }
 
 #loginbox{
-    width: 500px;
+    margin-left: 10%;
+    width: 80%;
     height: 50px;
     border-radius: 10px;
-    margin-left: 100px;
 }
 
 #loginbutton{
-    width: 150px;
+    width: 50%;
     height: 60px;
     border-radius: 10px;
-    background-color:  #0099FF;
+    background-color:  darkblue;
     color: white;
     font-size: 30px;
-    margin-left: 85px;
     margin-top: 10px;
+    margin-right: 20%;
+    margin-left: 30%;
+    border: 0;
 }
 
-#wordS{
-    color: #0099FF;
-    margin-left: 100px;
+.dl{
+    margin-left: 20%;
+    text-decoration: none;
 }
-#Noa{
-    margin-left: 100px;
+.hh{
+    margin-left: 10%;
 }
 
-a{
-    margin-left: 100px;
-    padding-top: 5px;
-}
-#o{
-    background-color: #0099FF;
-    border-radius: 100px;
-}
+.headL{
+    background-color: darkblue;
+    color: white;
+    padding-top : 0.25%;
+    padding-bottom: 1%;
+    margin-bottom: 2.5%;
+    text-align: center;
+    font-size: xx-large;
+  }
