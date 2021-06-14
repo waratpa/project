@@ -1,0 +1,12 @@
+.Fo1{
+    font-size: large;
+    color: white;
+}
+.bgn{
+    background-color: darkblue;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+.bgp{
+    padding: 0;
+}

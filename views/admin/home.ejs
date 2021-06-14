@@ -3,8 +3,11 @@
     <script src="Acheck.js" defer></script>
     <div class="container">
         <div class="main">
+            
             <button onclick="myFunction()" class="addbut"><strong>ADD Flight</strong></button>
+            
             <div class="addflightbox" id="add">
+                
                 <form action="/addflight" method="POST">
                     
                     <div class="row">
@@ -97,6 +100,7 @@
             </div>
 
             <div class="searchbox">
+                <div class="headL">Search</div>
                 <form action="/adminhomeS" method="POST">
                 <div class="row">
                     <div class="col-3">
@@ -151,8 +155,7 @@
                         </select>
                     </div>
                     <div class="col-3">
-                        <a id="search">No. of Passengers</a>
-                        <input type="number" min="1" class="input1" name="Snum">
+
                     </div>
                     <div class="col-3">
                         <input type="submit" class="submit" value="Search Flights">
@@ -161,6 +164,8 @@
                 </form>
             </div>
             
+            <div class="allF"><strong>All flight</strong></div>
+
             <div class="sort">
             sort by :   <input type="radio" id="male" name="sort" value="none" onclick="sortnone()">
                         <label for="none">none</label> 

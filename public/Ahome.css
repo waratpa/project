@@ -6,13 +6,11 @@
 }
 .searchbox{
     border: black 2px solid;
-    height: 250px;
-    border-radius: 20px;
     margin-left: 1%;
     margin-right: 1%;
     font-size: 25px;
-    padding-top: 22px;
     margin-top: 0.5%;
+    padding-bottom: 1%;
 }
 .input1{
     width: 95%;
@@ -27,11 +25,11 @@
 .submit{
     width: 95%;
     height: 50px;
-    margin-top: 15%;
+    margin-top: 12%;
     margin-right: 2.5%;
     margin-left: 2.5%;
     border-radius: 10px;
-    background-color:  #0099FF;
+    background-color:  darkblue;
     color: white;
     border: 0;
 }
@@ -81,14 +79,13 @@
     border-radius: 10px;
     font-size: large;
     color: white;
-    background-color: #4169E1;
+    background-color: darkblue;
     border: 0;
 }
 
 .addflightbox{
     margin-top: 0.5%;
     border: black 2px solid;
-    border-radius: 20px;
     margin-left: 1%;
     margin-right: 1%;
     font-size: 25px;
@@ -112,8 +109,8 @@
 }
 
 .sort{
-    margin-left: 1%;
-    font-size: 25px;
+    margin-left: 2.5%;
+    font-size: x-large;
 }
 
 .addin{
@@ -148,8 +145,25 @@
 .addinbut{
     width: 96%;
     border: 0;
-    background-color: #0099FF;
+    background-color: darkblue;
     color: white;
     border-radius: 10px;
     margin-right: 4%;
 }
+
+.allF{
+    background-color: darkblue; 
+    color: white; 
+    margin-top: 1%; 
+    font-size: large;
+    padding: 0.5%;
+    padding-left: 2.5%;
+}
+
+.headL{
+    background-color: darkblue;
+    color: white;
+    padding-top : 0.25%;
+    padding-right: 1%;
+    padding-left: 1%;
+  }

@@ -3,18 +3,23 @@
     <div class="container">
         <div class="main">
             <form action="/addairline" method="POST" enctype="multipart/form-data">
+                
                 <div class="addairlinebox">
-                    Airline Name:
+                    <div class="headL"><p>Add new airline</p></div>
+                    <div class="sp">
+                    Airline Name:   
                     <input type="text" name="Nairline"><br>
                     image:
                     <input type="file" name="Image" accept="image/*"><br>
-                    <button>ADD</button>
+                    <button class="addbut">ADD</button>
+                    </div>
+                    
                 </div>
             </form> 
                 <div class="airlinelist">
-                    <p>Airline list</p>
+                    <div class="headL"><p>Airline list</p></div>
+                    <div class="sp">
                     <input type="text">
-                    <button type="submit">Search</button>
                     <% airlines.forEach(function(airline){  %>
                         <div class="list">
                             <form action="/deleteairline/<%= airline._id %>?_method=DELETE" method="POST">
@@ -25,6 +30,7 @@
                             </form>   
                         </div>
                     <% }); %>
+                    </div>
                 </div>
             
         </div>

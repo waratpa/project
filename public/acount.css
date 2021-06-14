@@ -6,7 +6,7 @@ body{
     height: 10  00px;
     font-size: 30px;
     color: #0099FF;
-    border-radius: 10px;
+    border: black solid 2px;
     margin-top: 2%;
 }
 p{
@@ -14,7 +14,7 @@ p{
 }
 #Myac{
     font-size: 50px;
-    color: #0099FF;
+    color: darkblue;
     padding-top: 20px;
 }
 .input{
@@ -24,7 +24,7 @@ p{
     border-radius: 10px;
 }
 .edit{
-    background-color: #0099FF;
+    background-color: darkblue;
     color: white;
     text-align: center;
     width: 100px;
@@ -38,7 +38,7 @@ p{
     width: 500px;
     height: 500px;
     border-radius: 1000px;
-    border: #0099FF 30px solid;
+    border: darkblue 30px solid;
     margin-left: 2.5%;
     margin-top: 40px; 
 }
@@ -54,3 +54,13 @@ p{
     margin-left: 45%;
     padding-bottom: 0px;
 }
+
+.headL{
+    background-color: darkblue;
+    color: white;
+    font-size: xx-large;
+    padding-top : 0.25%;
+    padding-right: 1%;
+    padding-left: 1%;
+    border-bottom: black solid 2px;
+  }

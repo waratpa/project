@@ -5,18 +5,22 @@
   <div class="container">
     <div class="main">    
       <div class="addtownbox">
+        
         <form action="/addtown" method="POST">
-          <strong>Add Town</strong>
+          <div class="headL"><p><strong>Add Town</strong></p></div>
+          <div class="sp">
           <input type="text" name="Ntown">
           <button type="submit" class="addbut">Add</button>
+          </div>
         </form>
+      
       </div>
 
       <div class="townlist">
-        <strong>Town list</strong><br>
-        <div class="ons">
+        <div class="headL"><p>Town list</p></div>
+        <div class="sp">
         <input type="text" id="myInput" onkeyup="search()" placeholder="Search for town">
-        </div>
+        
         <ul id="myUL">
           <% towns.forEach(function(town){  %>
             <form action="/deletetown/<%= town._id %>?_method=DELETE" method="POST">
@@ -26,6 +30,7 @@
             </form> 
           <% }); %>    
         </ul>
+        </div>
       </div> 
 <%- include('../partials/footer.ejs') %>
 

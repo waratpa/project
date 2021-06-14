@@ -218,7 +218,7 @@ app.post('/homeS', function(req, res){
     });
 });
 
-app.get('/adminhome', function(req, res){
+app.get('/adminhome', isLoggedIn2,function(req, res){
 
         Flight.find({}, function(err, allflight){
             if(err){
@@ -295,7 +295,7 @@ app.get('/adminhome', function(req, res){
         });    
 });
 
-app.post('/adminhomeS', function(req, res){
+app.post('/adminhomeS', isLoggedIn2,function(req, res){
     var from = req.body.Sfrom;
     var to = req.body.Sto;
     var sclass = req.body.Sclass;
@@ -419,7 +419,7 @@ app.get('/country', isLoggedIn2, function(req, res){
     });
 });
 
-app.post('/addcountry', function(req, res){
+app.post('/addcountry', isLoggedIn2,function(req, res){
     var countryname = req.body.Ncountry;
     Country.create({countryname:countryname}, function(err, Country){
         if(err) {
@@ -431,7 +431,7 @@ app.post('/addcountry', function(req, res){
     });
 });
 
-app.delete('/deletecountry/:id', function(req, res){
+app.delete('/deletecountry/:id', isLoggedIn2, function(req, res){
     Country.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect('/country');
@@ -452,7 +452,7 @@ app.get('/town', isLoggedIn2, function(req, res){
     }).sort({"townname":1});
 });
 
-app.post('/addtown', function(req, res){
+app.post('/addtown', isLoggedIn2,function(req, res){
     var townname = req.body.Ntown;
     Town.create({townname:townname}, function(err, Town){
         if(err) {
@@ -464,7 +464,7 @@ app.post('/addtown', function(req, res){
     });
 });
 
-app.delete('/deletetown/:id', function(req, res){
+app.delete('/deletetown/:id',  isLoggedIn2,function(req, res){
     Town.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect('/town');
@@ -475,7 +475,7 @@ app.delete('/deletetown/:id', function(req, res){
     });
 })
 
-app.post('/registerA', function(req, res){
+app.post('/registerA', isLoggedIn2, function(req, res){
     var username = req.body.username;
     var password = req.body.password;
     var newUser = new User({username:username, userclass: "admin"});
@@ -557,7 +557,7 @@ app.get('/accountV/:id' ,  isLoggedIn2,  function(req,res){
     });
 });
 
-app.get('/:id/edit' , function(req,res){
+app.get('/:id/edit' , isLoggedIn,function(req,res){
     User.findById(req.params.id , function(err, founduser){
         if(err){
             console.log(err);
@@ -612,7 +612,7 @@ app.post('/:id/booking', isLoggedIn, function(req, res){
     });
 });
 
-app.delete('/:id/cancel', function(req, res){
+app.delete('/:id/cancel', isLoggedIn,function(req, res){
     Book.findById(req.params.id, function(err,book){
         if(err){
             console.log(err);
@@ -636,7 +636,7 @@ app.delete('/:id/cancel', function(req, res){
 })
 
 
-app.get('/Ainfo/:id' , function(req,res){
+app.get('/Ainfo/:id' , isLoggedIn2, function(req,res){
     Flight.findById(req.params.id , function(err, foundflight){
         if(err){
             console.log(err);
@@ -656,7 +656,7 @@ app.get('/airline', isLoggedIn2,  function(req, res){
     });
 });
 
-app.post('/addairline', upload.single('Image'), function(req, res){
+app.post('/addairline', isLoggedIn2, upload.single('Image'), function(req, res){
     var airlinename = req.body.Nairline;
     req.body.Image = '/uploads/'+req.file.filename;
     Airline.create({airlinename:airlinename,image:req.body.Image}, function(err, Airline){
@@ -669,7 +669,7 @@ app.post('/addairline', upload.single('Image'), function(req, res){
     });
 });
 
-app.delete('/deleteairline/:id', function(req, res){
+app.delete('/deleteairline/:id', isLoggedIn2, function(req, res){
     Airline.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect('/airline');
@@ -680,7 +680,7 @@ app.delete('/deleteairline/:id', function(req, res){
     });
 })
 
-app.get('/:id/editA', function(req,res){
+app.get('/:id/editA', isLoggedIn2,function(req,res){
     Flight.findById(req.params.id , function(err, foundflight){
         if(err){
             console.log(err);
@@ -690,7 +690,7 @@ app.get('/:id/editA', function(req,res){
     });
 });
 
-app.put('/:id/conedit' , function(req,res){
+app.put('/:id/conedit' , isLoggedIn2, function(req,res){
     User.findByIdAndUpdate(req.params.id, req.body.infoflight, function(err, updateflight){
         if(err){
             res.redirect('/adminhome');
@@ -701,7 +701,7 @@ app.put('/:id/conedit' , function(req,res){
     });
 });
 
-app.delete('/deleteflight/:id', function(req, res){
+app.delete('/deleteflight/:id', isLoggedIn2, function(req, res){
     Flight.findByIdAndRemove(req.params.id, function(err){
         if(err){
             res.redirect('/adminhome');

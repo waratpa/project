@@ -9,14 +9,23 @@
       
       <div class="addflightbox" id="admin">
         <button onclick="myFunctionM2()" class="addbut2">Add Admin</button>
+        
         <form action="/registerA" method="POST">
           <div class="addadmin" id="add">
-            Add Admin<br>
-            User Name
-            <input type="text" name="username"><br>
-            Password
-            <input type="password" name="password">
-            <input type="submit" value="register">
+            <div class="headL"><p>Add Admin</p></div>
+            <div class="sp">
+              <p>
+                User Name
+                <input class="addin" type="text" name="username">
+              </p>
+              <p>
+                Password
+                <input class="addin" type="password" name="password">
+                <input class="addbutin" type="submit" value="register">
+              </p>
+            </div>
+           
+            
           </div>
           
           </form>
@@ -29,7 +38,8 @@
       </div> 
       
       <div class="countrylist">
-        <p>Member list</p>
+        <div class="headL"><p>Member list</p></div>
+        <div class="sp">
         <input type="text" id="myInput" onkeyup="search()" placeholder="Search for town" title="Type in a name">
         <ul id="myUL">
           <% users.forEach(function(user){  %>
@@ -40,6 +50,7 @@
               </li>
           <% }); %>    
         </ul>
+      </div>
       </div>
       
     </div>

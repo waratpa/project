@@ -7,14 +7,18 @@
     <div class="main">  
       <div class="addcountrybox">
         <form action="/addcountry" method="POST">
-          Add Country
-          <input type="text" name="Ncountry">
-          <button type="submit">Add</button>
+          <div class="headL"><p>Add Country</p></div>
+          <div class="sp">
+            <input type="text" name="Ncountry">
+            <button class="addbut" type="submit">Add</button>
+          </div>
+          
         </form>
       </div>
 
       <div class="countrylist">
-        <p>Country list</p>
+        <div class="headL"><p>Country list</p></div>
+        <div class="sp">
         <input type="text" id="myInput" onkeyup="search()" placeholder="Search for town" title="Type in a name">
         <ul id="myUL">
           <% countrys.forEach(function(country){  %>
@@ -25,6 +29,7 @@
             </form> 
           <% }); %>    
         </ul>
+        </div>
       </div>
       
     </div>
