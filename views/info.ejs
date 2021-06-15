@@ -61,7 +61,7 @@
                         <span class="bookr"><strong><%= flight.airlinename %></strong></span><br>
                         <span class="bookr"><strong>Number of ticket</strong><input type="number" id="seatnum" onchange="totalprice()" value="1" class="nums" name="num"></span>
                         <span class="bookr"><br><strong>Receive point</strong><span id="point" class="bookr4"><%= flight.price /10 %></span> Point</span> 
-                        <input type="number" name="rpoint" style="display: none;" value="<%= flight.price /10 %>">
+                        <input type="number" id="rpoint" name="rpoint" style="display: none;" value="<%= flight.price /10 %>">
                         </div>
 
                     <div class="col-sm-4 col-12 box10">
